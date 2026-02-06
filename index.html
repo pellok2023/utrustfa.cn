@@ -11,6 +11,14 @@
         html {
             scroll-behavior: smooth;
         }
+        /* 自定義顏色變數 */
+        :root {
+            --navy-blue: #001f3f;
+            --navy-blue-light: #003d7a;
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --gold-dark: #b8941f;
+        }
         .hero-bg {
             background-image: url('assets/image02.jpg');
             background-size: cover;
@@ -40,22 +48,53 @@
             .hero-bg {
                 background-attachment: scroll;
             }
+            #home {
+                align-items: flex-end;
+                padding-bottom: 2rem;
+            }
+            .hero-content {
+                padding-top: 50%;
+            }
+        }
+        /* 海軍藍樣式 */
+        .navy-bg {
+            background-color: var(--navy-blue);
+        }
+        .navy-text {
+            color: var(--navy-blue);
+        }
+        .navy-hover:hover {
+            color: var(--navy-blue-light);
+        }
+        /* 金色樣式 */
+        .gold-text {
+            color: var(--gold);
+        }
+        .gold-bg {
+            background-color: var(--gold);
+        }
+        .gold-hover:hover {
+            background-color: var(--gold-dark);
+        }
+        .gold-accent {
+            color: var(--gold);
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- 導航欄 -->
-    <nav class="bg-blue-900 text-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="navy-bg text-white shadow-lg fixed w-full top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="text-xl font-bold">青岛又上企业服务</div>
                 <!-- Desktop Menu -->
                 <ul class="hidden md:flex space-x-6">
-                    <li><a href="#home" class="hover:text-blue-300 transition">首页</a></li>
-                    <li><a href="#about" class="hover:text-blue-300 transition">关于我们</a></li>
-                    <li><a href="#services" class="hover:text-blue-300 transition">核心业务</a></li>
-                    <li><a href="#team" class="hover:text-blue-300 transition">核心团队</a></li>
-                    <li><a href="#contact" class="hover:text-blue-300 transition">联系我们</a></li>
+                    <li><a href="#home" class="hover:text-yellow-400 transition">首页</a></li>
+                    <li><a href="#about" class="hover:text-yellow-400 transition">关于我们</a></li>
+                    <li><a href="#services" class="hover:text-yellow-400 transition">核心业务</a></li>
+                    <li><a href="#team" class="hover:text-yellow-400 transition">核心团队</a></li>
+                    <li><a href="#advantages" class="hover:text-yellow-400 transition">核心优势</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-400 transition">联系我们</a></li>
                 </ul>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
@@ -65,11 +104,12 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <ul class="flex flex-col space-y-3">
-                    <li><a href="#home" class="block hover:text-blue-300 transition">首页</a></li>
-                    <li><a href="#about" class="block hover:text-blue-300 transition">关于我们</a></li>
-                    <li><a href="#services" class="block hover:text-blue-300 transition">核心业务</a></li>
-                    <li><a href="#team" class="block hover:text-blue-300 transition">核心团队</a></li>
-                    <li><a href="#contact" class="block hover:text-blue-300 transition">联系我们</a></li>
+                    <li><a href="#home" class="block hover:text-yellow-400 transition">首页</a></li>
+                    <li><a href="#about" class="block hover:text-yellow-400 transition">关于我们</a></li>
+                    <li><a href="#services" class="block hover:text-yellow-400 transition">核心业务</a></li>
+                    <li><a href="#team" class="block hover:text-yellow-400 transition">核心团队</a></li>
+                    <li><a href="#advantages" class="block hover:text-yellow-400 transition">核心优势</a></li>
+                    <li><a href="#contact" class="block hover:text-yellow-400 transition">联系我们</a></li>
                 </ul>
             </div>
         </div>
@@ -77,10 +117,12 @@
 
     <!-- 首屏 -->
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">专业企业服务，助力企业稳健发展</h1>
+        <div class="container mx-auto px-4 text-center hero-content">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+                专业企业服务，助力企业稳健发展
+            </h1>
             <p class="text-xl md:text-2xl mb-8 drop-shadow-md">青岛又上企业服务有限公司，成立于2024年，是一家专注于企业全生命周期服务的专业机构。我们立足青岛，辐射全国，为企业提供从管理咨询、数字科技到供应链优化、资本运作的一站式解决方案，以专业赋能企业成长，以服务创造商业价值。</p>
-            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition shadow-lg">
+            <a href="#contact" class="inline-block gold-bg gold-hover text-white font-semibold py-3 px-8 rounded-lg transition shadow-lg">
                 立即咨询
             </a>
         </div>
@@ -89,7 +131,7 @@
     <!-- 關於我們 -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">关于青岛又上</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 navy-text">关于青岛又上</h2>
             <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
                 <p class="mb-4">
                     青岛又上企业服务有限公司，成立于2024年11月6日，是一家专注于为企业提供全生命周期服务的专业机构。作为港澳台投资的有限责任公司，我们立足青岛、辐射全国，以"专业赋能企业，服务创造价值"为核心使命，为各类企业提供从战略规划到落地执行的一站式解决方案。
@@ -102,40 +144,40 @@
     </section>
 
     <!-- 核心業務 -->
-    <section id="services" class="py-20 bg-gray-100">
+    <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">核心业务</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 navy-text">核心业务</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- 企业管理类 -->
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <div class="text-blue-900 mb-4">
+                    <div class="gold-text mb-4">
                         <i class="fas fa-building text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">企业管理类</h3>
+                    <h3 class="text-xl font-bold mb-3 navy-text">企业管理类</h3>
                     <p class="text-gray-600 text-sm">企业形象策划、企业管理、企业管理咨询、创业投资（限股权投资未上市企业）、社会经济咨询服务、健康咨询服务（不含诊疗服务）、财务咨询</p>
                 </div>
                 <!-- 数字科技类 -->
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <div class="text-blue-900 mb-4">
+                    <div class="gold-text mb-4">
                         <i class="fas fa-laptop-code text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">数字科技类</h3>
+                    <h3 class="text-xl font-bold mb-3 navy-text">数字科技类</h3>
                     <p class="text-gray-600 text-sm">信息技术咨询服务、互联网数据服务、大数据服务、技术开发/咨询/交流/转让/推广、数字文化创意软件开发/内容应用服务、人工智能应用软件开发/理论与算法软件开发、计算机软硬件及辅助设备批发</p>
                 </div>
                 <!-- 供应链与贸易类 -->
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <div class="text-blue-900 mb-4">
+                    <div class="gold-text mb-4">
                         <i class="fas fa-truck text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">供应链与贸易类</h3>
+                    <h3 class="text-xl font-bold mb-3 navy-text">供应链与贸易类</h3>
                     <p class="text-gray-600 text-sm">供应链管理服务、货物进出口、技术进出口</p>
                 </div>
                 <!-- 创意设计类 -->
                 <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <div class="text-blue-900 mb-4">
+                    <div class="gold-text mb-4">
                         <i class="fas fa-palette text-4xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">创意设计类</h3>
+                    <h3 class="text-xl font-bold mb-3 navy-text">创意设计类</h3>
                     <p class="text-gray-600 text-sm">平面设计、专业设计服务、工业设计服务、规划设计管理、建筑装饰材料销售、会议及展览服务、摄像及视频制作服务、组织文化艺术交流活动、以自有资金从事投资活动</p>
                 </div>
             </div>
@@ -145,7 +187,7 @@
     <!-- 核心團隊 -->
     <section id="team" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">核心团队</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 navy-text">核心团队</h2>
             <div class="max-w-5xl mx-auto">
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
                     <!-- 人物照片 -->
@@ -158,7 +200,7 @@
                     </div>
                     <!-- 介紹文字 -->
                     <div class="flex-1 text-gray-700">
-                        <h3 class="text-3xl font-bold mb-2 text-blue-900">阙又上</h3>
+                        <h3 class="text-3xl font-bold mb-2 navy-text">阙又上</h3>
                         <p class="text-lg text-gray-600 mb-2">创始人、法定代表人</p>
                         <p class="text-lg text-gray-600 mb-6">执行董事 | 资深企业管理与财务规划专家 | 畅销财经管理作家</p>
                         <div class="space-y-4 text-base leading-relaxed">
@@ -176,7 +218,7 @@
                             </p>
                         </div>
                         <div class="mt-6">
-                            <h4 class="font-semibold text-blue-900 mb-3">代表著作：</h4>
+                            <h4 class="font-semibold navy-text mb-3">代表著作：</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
                                 <li>《华尔街资深人士给年轻人的理财课》</li>
                                 <li>《阿甘投资法》</li>
@@ -192,23 +234,23 @@
     </section>
 
     <!-- 企業優勢 -->
-    <section id="advantages" class="py-20 bg-gray-100">
+    <section id="advantages" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">核心优势</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 navy-text">核心优势</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="bg-white rounded-lg shadow-md p-8 text-center">
-                    <i class="fas fa-link text-5xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">全链条服务覆盖</h3>
+                    <i class="fas fa-link text-5xl gold-text mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 navy-text">全链条服务覆盖</h3>
                     <p class="text-gray-600 text-center">从企业初创期的形象策划、管理咨询，到成长期的供应链优化、技术赋能，再到成熟期的资本运作、全球化布局，我们提供覆盖企业全生命周期的专业服务，助力企业高效发展。</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-8 text-center">
-                    <i class="fas fa-users text-5xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">专业团队与资源整合</h3>
+                    <i class="fas fa-users text-5xl gold-text mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 navy-text">专业团队与资源整合</h3>
                     <p class="text-gray-600 text-center">汇聚企业管理、数字科技、投融资等领域的资深专家，整合国内外优质资源，为客户提供定制化、高价值的服务方案，解决企业发展中的各类痛点与难点。</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-md p-8 text-center">
-                    <i class="fas fa-shield-alt text-5xl text-blue-900 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3 text-blue-900">合规与创新并重</h3>
+                    <i class="fas fa-shield-alt text-5xl gold-text mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 navy-text">合规与创新并重</h3>
                     <p class="text-gray-600 text-center">严格遵循国家法律法规，在合规经营的基础上，积极拥抱数字化、智能化趋势，将前沿技术与企业服务深度融合，为客户创造更具竞争力的发展模式。</p>
                 </div>
             </div>
@@ -218,7 +260,7 @@
     <!-- 企業願景 -->
     <section id="vision" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">企业愿景</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 navy-text">企业愿景</h2>
             <div class="max-w-4xl mx-auto text-center">
                 <p class="text-xl text-gray-700 leading-relaxed">
                     我们致力于成为国内领先的企业综合服务提供商，以专业、高效、创新的服务，助力每一家合作企业实现可持续发展，共创商业新价值。
@@ -228,26 +270,26 @@
     </section>
 
     <!-- 聯繫我們 -->
-    <section id="contact" class="py-20 bg-blue-900 text-white">
+    <section id="contact" class="py-20 navy-bg text-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">联系我们</h2>
             <div class="max-w-3xl mx-auto text-center space-y-6">
                 <div>
                     <h3 class="text-2xl font-semibold mb-4">青岛又上企业服务有限公司</h3>
                     <p class="text-lg mb-2">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <i class="fas fa-map-marker-alt mr-2 gold-text"></i>
                         地址：山东省青岛市市南区南京路75号
                     </p>
                     <p class="text-lg mb-2">
-                        <i class="fas fa-phone mr-2"></i>
-                        电话：<span class="text-blue-300">（请预留电话位置）</span>
+                        <i class="fas fa-phone mr-2 gold-text"></i>
+                        电话：（请预留电话位置）
                     </p>
                     <p class="text-lg mb-2">
-                        <i class="fas fa-envelope mr-2"></i>
-                        邮箱：<span class="text-blue-300">（请预留邮箱位置）</span>
+                        <i class="fas fa-envelope mr-2 gold-text"></i>
+                        邮箱：（请预留邮箱位置）
                     </p>
                     <p class="text-lg">
-                        <i class="fas fa-id-card mr-2"></i>
+                        <i class="fas fa-id-card mr-2 gold-text"></i>
                         统一社会信用代码：91370200MAE3R6NK9R
                     </p>
                 </div>
@@ -256,18 +298,18 @@
     </section>
 
     <!-- 頁腳 -->
-    <footer class="bg-gray-900 text-gray-400 py-8">
+    <footer class="navy-bg text-gray-300 py-8">
         <div class="container mx-auto px-4 text-center text-sm">
             <p class="mb-4">版权所有 © 2024 青岛又上企业服务有限公司</p>
             <div class="space-y-2">
                 <p>统一社会信用代码：91370200MAE3R6NK9R</p>
                 <p>
                     ICP备案号：
-                    <a href="#" class="text-blue-400 hover:text-blue-300">鲁ICP备XXXXXXXX号</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">鲁ICP备XXXXXXXX号</a>
                 </p>
                 <p>
                     公安备案号：
-                    <a href="#" class="text-blue-400 hover:text-blue-300">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
                         <i class="fas fa-shield-alt mr-1"></i>
                         鲁公网安备XXXXXXXX号
                     </a>
